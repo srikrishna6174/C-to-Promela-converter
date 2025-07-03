@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 39 77% 93%;    /* F8F4E1 */
+    --foreground: 25 33% 20%;    /* 543310 */
+    --primary: 24 35% 56%;       /* AF8F6F */
+    --secondary: 27 45% 31%;     /* 74512D */
+    --accent: 25 33% 20%;        /* 543310 */
+    --primary-foreground: 39 77% 93%;  /* Light color for primary backgrounds */
+    --secondary-foreground: 39 77% 93%; /* Light color for secondary backgrounds */
+    
+    /* ... keep existing code (other CSS variables) */
+  }
+
+  [data-theme="dark"] {
+    --background: 25 33% 20%;    /* 543310 */
+    --foreground: 39 77% 93%;    /* F8F4E1 */
+    --primary: 39 77% 93%;       /* F8F4E1 - Light color for text */
+    --secondary: 24 35% 56%;     /* AF8F6F */
+    --accent: 39 77% 93%;        /* F8F4E1 */
+    --primary-foreground: 25 33% 20%;  /* Dark color on light buttons */
+    --secondary-foreground: 39 77% 93%; /* Light text on dark backgrounds */
+  }
+
+  * {
+    @apply border-border transition-colors duration-200;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased min-h-screen;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.model-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
